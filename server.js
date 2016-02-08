@@ -5,10 +5,14 @@ var pg = require('pg');
 var app = express();
 
 app.set('port', process.env.PORT || 5000);
-console.log(app);
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+ app.get('/hello', function(request, response) {
+ response.send('Hello World!');
+ });
+ 
 app.post('/update', function(req, res) {
     console.log(process.env.DATABASE_URL);
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
