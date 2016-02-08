@@ -1,3 +1,7 @@
+app.get('/', function (req, res) {
+  res.render('index', {});
+});
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
