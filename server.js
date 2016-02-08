@@ -5,7 +5,7 @@ var pg = require('pg');
 var app = express();
 
 app.set('port', process.env.PORT || 5000);
-
+console.log(app);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
