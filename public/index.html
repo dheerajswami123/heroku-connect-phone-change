@@ -15,6 +15,7 @@
     <script>
         $(function() {
             $("#phoneChangerForm").submit(function(event) {
+                console.log(event.target);
                 event.preventDefault();
 
                 var errorMessage = $("#errorMessage");
@@ -53,6 +54,7 @@
                             $("#message").show();
                         },
                         error: function(err) {
+                            console.log(err);
                             errorMessage.text(err.responseJSON.error);
                             error.show();
                         }
