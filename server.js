@@ -4,14 +4,12 @@ var pg = require('pg');
 
 var app = express();
 
-app.set('port', process.env.PORT || 5000);
+//app.set('port', process.env.PORT || 5000);
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
- app.get('/hello', function(request, response) {
- response.send('Hello World!');
- });
+
  
 app.post('/update', function(req, res) {
     console.log(process.env.DATABASE_URL);
@@ -46,6 +44,6 @@ app.post('/update', function(req, res) {
     });
 });
 
-app.listen(app.get('port'), function () {
-    console.log('Express server listening on port ' + app.get('port'));
-});
+//app.listen(app.get('port'), function () {
+//    console.log('Express server listening on port ' + app.get('port'));
+//});
